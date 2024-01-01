@@ -41,30 +41,31 @@ export default function SignupPage() {
 }, [user]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className=" pt-8 items-center justify-between  lg:flex">
+    <div className="flex flex-col gap-3 py-32 bg-gray-800 font-bold rounded-lg shadow-md mx-auto items-center justify-center h-auto px-20 w-auto pt-2 lg:flex">
       <h1>{loading ? "Processing": "Signup"}</h1>
       <hr />
       <label htmlFor="username">Username</label>
       <input
-        className="p-2 border border-gray-300 rounded-lg text-black"
+        className="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         type="text"
         id="username"
         value={user.username}
         onChange={(e) => setUser({ ...user, username: e.target.value })}
         placeholder="username"
       />
-      <label htmlFor="username">email</label>
+      <label htmlFor="email">email</label>
       <input
-        className="p-2 border border-gray-300 rounded-lg text-black"
+        className="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         type="text"
         id="email"
         value={user.email}
         onChange={(e) => setUser({ ...user, email: e.target.value })}
         placeholder="email"
       />
-      <label htmlFor="username">password</label>
+      <label htmlFor="password">password</label>
       <input
-        className="p-2 border border-gray-300 rounded-lg text-black"
+        className="bg-gray-50 border border-gray-300 text-gray-900  text-sm rounded-lg focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         type="password"
         id="password"
         value={user.password}
@@ -79,6 +80,7 @@ export default function SignupPage() {
         {buttonDisabled ? "No Signup" : "Sign Up"}
       </button>
       <Link href="/login"> Already have an account</Link>
+    </div>
     </div>
   );
 }
